@@ -38,7 +38,8 @@ public class HomeFragment extends Fragment {
         NewsRepository repository = new NewsRepository();
         viewModel = new ViewModelProvider(this, new NewsViewModelFactory(repository))
                 .get(HomeViewModel.class);
-        viewModel.setCountryInput("us");
+//        viewModel = new HomeViewModel(repository);
+        viewModel.setCountryInput("CN");
         viewModel
                 .getTopHeadlines()
                 .observe(
