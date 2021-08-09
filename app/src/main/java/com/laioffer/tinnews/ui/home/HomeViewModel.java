@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 
+import com.laioffer.tinnews.model.Article;
 import com.laioffer.tinnews.model.NewsResponse;
 import com.laioffer.tinnews.repository.NewsRepository;
 
@@ -23,4 +24,7 @@ public class HomeViewModel extends androidx.lifecycle.ViewModel {
         return Transformations.switchMap(countryInput, repository::getTopHeadlines);
     }
 
+    public void setFavoriteArticleInput(Article article) {
+        repository.favoriteArticle(article);
+    }
 }
